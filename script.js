@@ -9,7 +9,6 @@ const checkoutButton = document.querySelector('.check-button');
 const scoreElement = document.querySelector('.score');
 const resetGame = document.querySelector('.reset');
 const highscoreElement = document.querySelector('.highscore');
-const sounds = ['victory', 'wrong'];
 
 let numberOfGuesses = 0;
 let score = 50;
@@ -81,10 +80,10 @@ const checkGuessNumber = function () {
     }
     //IF USER GUESSES THE NUMBER
     else if (userGuess === secretNumber) {
+      document.getElementById('victory').play();
       if (score > highscore) {
         highscore = score;
         highscoreElement.textContent = highscore;
-        document.getElementById('victory').play();
       }
 
       circle(
@@ -136,7 +135,7 @@ const reset = function () {
     document.querySelector('.guess').value = ``;
     document.querySelector('.guess').style.transition = '3s';
     document.querySelector('.guess').style.opacity = '1';
-
+    document.getElementById('victory').pause();
     guessNumber('#fff', '#fff', '?');
     displayMessage(`Can You Guess?!`, '#fff');
     displayNumberOfGuesses(`Number Of Guesses:${numberOfGuesses}`);
