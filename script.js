@@ -106,7 +106,7 @@ const checkGuessNumber = function () {
       //WHEN GUESS IS WRONG
     } else if (userGuess !== secretNumber) {
       if (score > 1) {
-        // document.getElementById('wrong').play();
+        document.getElementById('wrong').play();
         score = score - 1;
         scoreElement.textContent = score;
         numberOfGuesses = numberOfGuesses + 1;
