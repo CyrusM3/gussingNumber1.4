@@ -136,6 +136,7 @@ const reset = function () {
     document.querySelector('.guess').style.transition = '3s';
     document.querySelector('.guess').style.opacity = '1';
     document.getElementById('victory').pause();
+    document.getElementById('reset').play();
     guessNumber('#fff', '#fff', '?');
     displayMessage(`Can You Guess?!`, '#fff');
     displayNumberOfGuesses(`Number Of Guesses:${numberOfGuesses}`);
